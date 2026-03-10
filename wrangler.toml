@@ -15,7 +15,7 @@ class_name = "JournalDurableObject"
 # Migrations for Durable Objects
 [[migrations]]
 tag = "v1"
-new_classes = ["JournalDurableObject"]
+new_sqlite_classes = ["JournalDurableObject"]
 
 # Serve static assets from /public
 [assets]
