@@ -1,0 +1,33 @@
+{
+  "name": "cf_ai_voice_journal",
+  "version": "1.0.0",
+  "description": "AI-powered voice journal with mood tracking and weekly reflections on Cloudflare",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:pages": "npx wrangler pages dev public --port 8788 --proxy 8787",
+    "deploy": "wrangler deploy",
+    "deploy:pages": "wrangler pages deploy public --project-name cf-ai-voice-journal",
+    "tail": "wrangler tail",
+    "test": "vitest"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "ai",
+    "journal",
+    "voice",
+    "llama"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.91.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "hono": "^4.6.10"
+  }
+}

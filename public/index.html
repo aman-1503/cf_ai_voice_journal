@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Voice Journal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <h1>🎙️ Voice Journal</h1>
+      <p class="tagline">Speak your thoughts. Find your patterns.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Input Section -->
+      <section class="input-section">
+        <div class="prompt-suggestion" id="promptSuggestion">
+          <span class="prompt-label">Today's prompt:</span>
+          <span class="prompt-text" id="promptText">What made you smile today?</span>
+          <button class="refresh-prompt" id="refreshPrompt" title="New prompt">↻</button>
+        </div>
+
+        <div class="input-container">
+          <textarea 
+            id="journalInput" 
+            placeholder="Type your thoughts here, or click the microphone to speak..."
+            rows="4"
+          ></textarea>
+          
+          <div class="input-actions">
+            <button class="voice-btn" id="voiceBtn" title="Click to speak">
+              <span class="mic-icon">🎤</span>
+              <span class="voice-status" id="voiceStatus">Click to speak</span>
+            </button>
+            
+            <button class="submit-btn" id="submitBtn">
+              <span>Save Entry</span>
+              <span class="submit-icon">→</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="voice-indicator" id="voiceIndicator">
+          <div class="pulse-ring"></div>
+          <span>Listening...</span>
+        </div>
+      </section>
+
+      <!-- Analysis Result (shows after submission) -->
+      <section class="analysis-section" id="analysisSection" style="display: none;">
+        <h3>Entry Analysis</h3>
+        <div class="analysis-card">
+          <div class="analysis-item">
+            <span class="analysis-label">Summary</span>
+            <p id="analysisSummary"></p>
+          </div>
+          <div class="analysis-row">
+            <div class="analysis-item">
+              <span class="analysis-label">Mood</span>
+              <div class="mood-display">
+                <span class="mood-score" id="analysisMood">-</span>
+                <span class="mood-bar">
+                  <span class="mood-fill" id="moodFill"></span>
+                </span>
+              </div>
+            </div>
+            <div class="analysis-item">
+              <span class="analysis-label">Themes</span>
+              <div class="themes-list" id="analysisThemes"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actions -->
+      <section class="actions-section">
+        <button class="action-btn reflection-btn" id="reflectionBtn">
+          <span>✨</span> Weekly Reflection
+        </button>
+        <button class="action-btn history-btn" id="historyBtn">
+          <span>📖</span> View History
+        </button>
+        <button class="action-btn mood-btn" id="moodBtn">
+          <span>📊</span> Mood Trends
+        </button>
+      </section>
+
+      <!-- Clear Data Button -->
+      <section class="clear-section">
+        <button class="clear-btn" id="clearBtn">🗑️ Clear All Entries (Start Fresh)</button>
+      </section>
+
+      <!-- Entries History -->
+      <section class="history-section" id="historySection" style="display: none;">
+        <div class="section-header">
+          <h3>Journal Entries</h3>
+          <button class="close-btn" id="closeHistory">×</button>
+        </div>
+        <div class="entries-list" id="entriesList">
+          <!-- Entries will be loaded here -->
+        </div>
+      </section>
+
+      <!-- Weekly Reflection -->
+      <section class="reflection-section" id="reflectionSection" style="display: none;">
+        <div class="section-header">
+          <h3>✨ Your Weekly Reflection</h3>
+          <button class="close-btn" id="closeReflection">×</button>
+        </div>
+        <div class="reflection-content" id="reflectionContent">
+          <!-- Reflection will be loaded here -->
+        </div>
+      </section>
+
+      <!-- Mood Trends -->
+      <section class="mood-section" id="moodSection" style="display: none;">
+        <div class="section-header">
+          <h3>📊 Mood Trends</h3>
+          <button class="close-btn" id="closeMood">×</button>
+        </div>
+        <div class="mood-chart" id="moodChart">
+          <!-- Mood chart will be rendered here -->
+        </div>
+        <div class="mood-insight" id="moodInsight"></div>
+      </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+      <div class="loading-spinner"></div>
+      <p id="loadingText">Analyzing your thoughts...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
