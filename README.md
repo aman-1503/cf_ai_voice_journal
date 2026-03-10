@@ -10,13 +10,6 @@ An AI-powered daily journaling application built on Cloudflare. Speak or type yo
 **Try it now:**
 
 https://cf-ai-voice-journal.amanprabhune-8e9.workers.dev
-```
-
----
-
-### Submit this GitHub URL:
-```
-https://github.com/YOUR_USERNAME/cf_ai_voice_journal
 
 ## ✨ Features
 
