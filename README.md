@@ -6,6 +6,18 @@ An AI-powered daily journaling application built on Cloudflare. Speak or type yo
 ![Workers AI](https://img.shields.io/badge/Workers-AI-blue)
 ![Durable Objects](https://img.shields.io/badge/Durable-Objects-green)
 
+## 🚀 Live Demo
+**Try it now:**
+
+https://cf-ai-voice-journal.amanprabhune-8e9.workers.dev
+```
+
+---
+
+### Submit this GitHub URL:
+```
+https://github.com/YOUR_USERNAME/cf_ai_voice_journal
+
 ## ✨ Features
 
 - **Voice Input**: Speak your journal entries using browser speech recognition
